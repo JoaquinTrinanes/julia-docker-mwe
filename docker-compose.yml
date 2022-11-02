@@ -1,8 +1,24 @@
 version: "3.8"
 services:
+  # lab:
+  #   image: jupyter/datascience-notebook
+  #   volumes:
+  #     - ./src:/home/jovyan
+  #   ports:
+  #     - 8888:8888
+
+  # ESTO DE ABAJO VA
+  # lab:
+  #   image: statisticalmice/julia-jupyter:1.6
+  #   volumes:
+  #     - ./src:/home/arthur/workspace
+  #   ports:
+  #     - 8888:8888
   lab:
-    image: jupyter/datascience-notebook
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ./src:/home/jovyan
+      - ./src:/usr/myapp
     ports:
       - 8888:8888
