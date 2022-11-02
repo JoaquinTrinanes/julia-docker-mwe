@@ -3,6 +3,6 @@ services:
   lab:
     image: jupyter/datascience-notebook
     volumes:
-      - .:/home/jovyan
+      - ./src:/home/jovyan
     ports:
       - 8888:8888
